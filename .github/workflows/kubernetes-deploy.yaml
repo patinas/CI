@@ -1,0 +1,15 @@
+name: Kubernetes Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: "self-hosted"
+
+    steps:
+      - name: Checkout
+        user: actions/checkout@v2
+
