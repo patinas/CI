@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+
+env:
+  KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+
 jobs:
   deploy:
     runs-on: "self-hosted"
@@ -12,4 +16,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+
+      - name: Deploy App(Deployment)
+        uses: actions-hub/kubectl@master
+        with:
+          args: apply -f Apps/nginx.yaml
 
