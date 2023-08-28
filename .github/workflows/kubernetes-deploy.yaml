@@ -22,5 +22,3 @@ jobs:
         uses: actions-hub/kubectl@master
         with:
           args: apply -f Apps/nginx.yaml
-
-#
